@@ -1,0 +1,14 @@
+{
+  "name": "02-initializing-the-core",
+  "version": "1.0.0",
+  "description": "Initializing the core of the app using Parcel",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Harsh Tambe",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
