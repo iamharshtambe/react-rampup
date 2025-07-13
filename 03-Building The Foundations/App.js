@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+const author = 'Harsh Tambe';
+
 function Title() {
    return <h1>This is Title</h1>;
 }
@@ -10,6 +12,7 @@ function Header() {
       <div>
          <Title />
          <h1>This is Header</h1>
+         {author}
       </div>
    );
 }
