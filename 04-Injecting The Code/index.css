@@ -3,7 +3,7 @@
 }
 
 .app {
-   max-width: 1200px;
+   max-width: 1100px;
    margin: 0 auto;
    padding: 0 20px;
 }
@@ -60,13 +60,13 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: flex-start;
-   gap: 22px;
+   gap: 23px;
    margin-top: 40px;
 }
 
 .restro-card {
-   height: 280px;
-   width: 180px;
+   height: 310px;
+   width: 200px;
    border: 1px solid #ddd;
    border-radius: 10px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
