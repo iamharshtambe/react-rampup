@@ -745,34 +745,42 @@ const restroData = [
       widgetId: 'collectionV5RestaurantListWidget_SimRestoRelevance_food_seo',
    },
 ];
-function RestroCardContainer() {
+
+function RestroContainer() {
    return (
       <div className="restro-card-container">
-         <RestroCard restroObj={restroData[0]} />
-         <RestroCard restroObj={restroData[1]} />
-         <RestroCard restroObj={restroData[2]} />
-         <RestroCard restroObj={restroData[3]} />
-         <RestroCard restroObj={restroData[4]} />
-         <RestroCard restroObj={restroData[5]} />
-         <RestroCard restroObj={restroData[6]} />
-         <RestroCard restroObj={restroData[7]} />
+         {restroData.map((restro) => (
+            <RestroCard restroObj={restro} key={restro.info.id} />
+         ))}
       </div>
    );
 }
 
 function RestroCard({ restroObj }) {
+   const {
+      cloudinaryImageId,
+      name,
+      locality,
+      areaName,
+      cuisines,
+      avgRating,
+      sla,
+   } = restroObj?.info;
+
    return (
       <div className="restro-card">
          <img
-            src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restroObj.info.cloudinaryImageId}`}
+            src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
          />
-         <p>{restroObj.info.name}</p>
          <p>
-            {restroObj.info.locality}, {restroObj.info.areaName}
+            <b> {name}</b>
          </p>
-         <p>{restroObj.info.cuisines.join(', ')}</p>
-         <p>{restroObj.info.avgRating}</p>
-         <p>{restroObj.info.sla.deliveryTime} Minutes</p>
+         <p>
+            {locality}, {areaName}
+         </p>
+         <p>{cuisines.join(', ')}</p>
+         <p>{avgRating}</p>
+         <p>{sla.deliveryTime} Minutes</p>
       </div>
    );
 }
@@ -781,7 +789,7 @@ function App() {
    return (
       <div className="app">
          <Header />
-         <RestroCardContainer />
+         <RestroContainer />
       </div>
    );
 }
