@@ -89,3 +89,19 @@
    padding: 2px 15px;
    cursor: pointer;
 }
+
+.shimmer-ui {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   gap: 23px;
+   margin-top: 60px;
+}
+
+.shimmer-ui .card {
+   width: 200px;
+   height: 300px;
+   background-color: rgb(235, 235, 235);
+   border-radius: 10px;
+}

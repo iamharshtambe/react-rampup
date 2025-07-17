@@ -1,5 +1,6 @@
 import RestroCard from './RestroCard.js';
 import { useEffect, useState } from 'react';
+import Shimmer from './Shimmer.js';
 
 function RestroContainer() {
    const [listOfRestros, setListOfRestros] = useState([]);
@@ -28,6 +29,8 @@ function RestroContainer() {
 
       setListOfRestros(filteredListOfRestros);
    }
+
+   if (listOfRestros.length === 0) return <Shimmer />;
 
    return (
       <>
