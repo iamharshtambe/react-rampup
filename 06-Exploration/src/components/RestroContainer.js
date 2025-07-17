@@ -30,9 +30,9 @@ function RestroContainer() {
       setListOfRestros(filteredListOfRestros);
    }
 
-   if (listOfRestros.length === 0) return <Shimmer />;
-
-   return (
+   return listOfRestros.length === 0 ? (
+      <Shimmer />
+   ) : (
       <>
          <div className="filter">
             <button onClick={handleClick}>Top Rated Restaurants</button>
