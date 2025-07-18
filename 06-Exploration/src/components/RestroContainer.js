@@ -4,6 +4,8 @@ import Shimmer from './Shimmer.js';
 
 function RestroContainer() {
    const [listOfRestros, setListOfRestros] = useState([]);
+   const [filteredListOfRestros, setFilteredListOfRestros] = useState([]);
+   const [searchText, setSearchText] = useState('');
 
    async function fetchData() {
       const data = await fetch(
@@ -16,13 +18,18 @@ function RestroContainer() {
          json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
       );
+
+      setFilteredListOfRestros(
+         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+      );
    }
 
    useEffect(() => {
       fetchData();
    }, []);
 
-   function handleClick() {
+   function handleTopRatedRestros() {
       const filteredListOfRestros = listOfRestros.filter(
          (restro) => restro.info.avgRating > 4.2
       );
@@ -30,15 +37,34 @@ function RestroContainer() {
       setListOfRestros(filteredListOfRestros);
    }
 
+   function handleSearch() {
+      const filteredListOfRestros = listOfRestros.filter((restro) =>
+         restro.info.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      setFilteredListOfRestros(filteredListOfRestros);
+   }
+
    return listOfRestros.length === 0 ? (
       <Shimmer />
    ) : (
       <>
+         <div className="search">
+            <input
+               type="text"
+               placeholder="Search..."
+               value={searchText}
+               onChange={(e) => setSearchText(e.target.value)}
+            ></input>
+            <button onClick={handleSearch}>🔍</button>
+         </div>
          <div className="filter">
-            <button onClick={handleClick}>Top Rated Restaurants</button>
+            <button onClick={handleTopRatedRestros}>
+               Top Rated Restaurants
+            </button>
          </div>
          <div className="restro-card-container">
-            {listOfRestros.map((restro) => (
+            {filteredListOfRestros.map((restro) => (
                <RestroCard restroObj={restro} key={restro.info.id} />
             ))}
          </div>

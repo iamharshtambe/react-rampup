@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Search from './Search.js';
 
 function Header() {
    const [isLogin, setIslogin] = useState(false);
@@ -29,8 +28,6 @@ function Header() {
                </button>
             </ul>
          </div>
-
-         <Search />
       </>
    );
 }
