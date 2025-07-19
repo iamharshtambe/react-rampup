@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
    const [isLogin, setIslogin] = useState(false);
@@ -20,8 +21,12 @@ function Header() {
             <h1>Virar Eats</h1>
 
             <ul>
-               <li>Home</li>
-               <li>About Us</li>
+               <Link className="nav-links" to="/">
+                  Home
+               </Link>
+               <Link className="nav-links" to="about">
+                  About Us
+               </Link>
                <li>Cart</li>
                <button className="btn" onClick={handleClick}>
                   {isLogin ? 'Logout 🔴' : 'Login 🟢'}

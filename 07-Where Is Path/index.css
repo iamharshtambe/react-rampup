@@ -26,6 +26,11 @@
    font-size: 18px;
 }
 
+.nav-links {
+   text-decoration: none;
+   color: black;
+}
+
 .btn {
    font-size: 18px;
    outline: none;
