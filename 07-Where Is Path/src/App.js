@@ -5,6 +5,7 @@ import RestroContainer from './components/RestroContainer.js';
 import About from './components/About.js';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Error from './components/Error.js';
+import RestroMenu from './components/RestroMenu.js';
 
 function App() {
    return (
@@ -27,6 +28,10 @@ const appRouter = createBrowserRouter([
          {
             path: 'about',
             element: <About />,
+         },
+         {
+            path: '/restaurants/:restroId',
+            element: <RestroMenu />,
          },
       ],
       errorElement: <Error />,
