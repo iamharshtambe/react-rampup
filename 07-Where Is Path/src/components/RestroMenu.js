@@ -36,8 +36,6 @@ function RestroMenu() {
       restroMenu?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
          ?.card?.card;
 
-   console.log(itemCards);
-
    return (
       <div className="menu">
          <h1>{name}</h1>
