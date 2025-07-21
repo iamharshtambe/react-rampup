@@ -5,7 +5,7 @@ function About() {
       <div className="">
          <h1>About Us</h1>
 
-         <User name="Harsh" location="Mumbai" />
+         <User />
       </div>
    );
 }

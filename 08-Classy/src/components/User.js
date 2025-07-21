@@ -5,37 +5,31 @@ class User extends React.Component {
       super(props);
 
       this.state = {
-         age: 22,
-         isMarried: false,
-         count: 0,
+         userData: null,
       };
    }
 
+   async componentDidMount() {
+      const data = await fetch('https://api.github.com/users/iamharshtambe');
+      const json = await data.json();
+
+      this.setState({
+         userData: json,
+      });
+   }
+
    render() {
-      const { name, location } = this.props;
-      const { age, isMarried, count } = this.state;
+      if (!this.state.userData) {
+         return <p>Loading...</p>;
+      }
+
+      const { name, twitter_username } = this.state.userData;
 
       return (
-         <>
-            <div>
-               <h1>Name: {name}</h1>
-               <h4>Location: {location}</h4>
-               <h4>Age: {age}</h4>
-               <h4>Marital Status: {isMarried ? 'Married' : 'Unmarried'}</h4>
-            </div>
-            <div>
-               <h1>Count = {count}</h1>
-               <button
-                  onClick={() => {
-                     this.setState({
-                        count: this.state.count + 1,
-                     });
-                  }}
-               >
-                  +
-               </button>
-            </div>
-         </>
+         <div>
+            <h1>Name: {name}</h1>
+            <h4>X: {twitter_username}</h4>
+         </div>
       );
    }
 }
