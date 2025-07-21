@@ -35,7 +35,7 @@ function RestroContainer() {
          (restro) => restro.info.avgRating > 4.2
       );
 
-      setListOfRestros(filteredListOfRestros);
+      setFilteredListOfRestros(filteredListOfRestros);
    }
 
    function handleSearch() {
