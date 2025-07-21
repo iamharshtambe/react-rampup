@@ -2,6 +2,7 @@ import RestroCard from './RestroCard.js';
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer.js';
 import { Link } from 'react-router-dom';
+import { useStatus } from '../hooks/useStatus.js';
 
 function RestroContainer() {
    const [listOfRestros, setListOfRestros] = useState([]);
@@ -45,6 +46,15 @@ function RestroContainer() {
 
       setFilteredListOfRestros(filteredListOfRestros);
    }
+
+   const status = useStatus();
+
+   if (status === false)
+      return (
+         <h1>
+            Looks like you are offline! Please check your internet connection.
+         </h1>
+      );
 
    return listOfRestros.length === 0 ? (
       <Shimmer />

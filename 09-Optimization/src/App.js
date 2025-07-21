@@ -6,6 +6,7 @@ import About from './components/About.js';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Error from './components/Error.js';
 import RestroMenu from './components/RestroMenu.js';
+import { lazy, Suspense } from 'react';
 
 function App() {
    return (
@@ -15,6 +16,8 @@ function App() {
       </div>
    );
 }
+
+const Grocery = lazy(() => import('./components/Grocery.js'));
 
 const appRouter = createBrowserRouter([
    {
@@ -26,8 +29,16 @@ const appRouter = createBrowserRouter([
             element: <RestroContainer />,
          },
          {
-            path: 'about',
+            path: '/about',
             element: <About />,
+         },
+         {
+            path: '/grocery',
+            element: (
+               <Suspense fallback={<h1>Loading...</h1>}>
+                  <Grocery />
+               </Suspense>
+            ),
          },
          {
             path: '/restaurants/:restroId',
