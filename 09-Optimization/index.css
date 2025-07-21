@@ -15,10 +15,6 @@
    justify-content: space-between;
 }
 
-.nav-bar h1 {
-   font-style: italic;
-}
-
 .nav-bar ul {
    display: flex;
    list-style: none;
