@@ -1,0 +1,118 @@
+* {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+/* Header */
+.nav-bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.nav-bar ul {
+   display: flex;
+   list-style: none;
+   gap: 100px;
+   font-size: 18px;
+}
+
+.nav-links {
+   text-decoration: none;
+   color: black;
+}
+
+.btn {
+   font-size: 18px;
+   outline: none;
+   border-radius: 25px;
+   border: 1px solid #ccc;
+   background: #f9f9f9;
+   cursor: pointer;
+   padding: 1px 15px;
+}
+
+/* Search Bar */
+.search {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+.search input {
+   width: 300px;
+   height: 36px;
+   border-radius: 25px;
+   border: 1px solid #ccc;
+   padding: 0 15px;
+   font-size: 16px;
+   outline: none;
+   margin-right: 10px;
+}
+
+.search button {
+   height: 36px;
+   padding: 0 15px;
+   border-radius: 25px;
+   border: 1px solid #ccc;
+   background: #f9f9f9;
+   cursor: pointer;
+   font-size: 18px;
+}
+
+/* Restro Card */
+.restro-card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   gap: 23px;
+   margin-top: 20px;
+}
+
+.restro-card {
+   width: 200px;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   text-align: center;
+}
+
+.restro-card img {
+   width: 100%;
+   height: 100px;
+   object-fit: cover;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   display: block;
+}
+
+.filter button {
+   margin-top: 20px;
+   border-radius: 25px;
+   border: 1px solid #ccc;
+   background: #f9f9f9;
+   padding: 2px 15px;
+   cursor: pointer;
+}
+
+.shimmer-ui {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   gap: 23px;
+   margin-top: 60px;
+}
+
+.shimmer-ui .card {
+   width: 200px;
+   height: 300px;
+   background-color: rgb(235, 235, 235);
+   border-radius: 10px;
+}
