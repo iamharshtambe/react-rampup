@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import ItemCard from './ItemCard';
 
-function RestroCategory({ data }) {
-  const [accordian, setAccordian] = useState(false);
-
+function RestroCategory({ data, accordian, setShowIndex }) {
   function handleClick() {
-    setAccordian(!accordian);
+    setShowIndex();
   }
+
   return (
     <div className="accordian" onClick={handleClick}>
       <div className="accordian-2">

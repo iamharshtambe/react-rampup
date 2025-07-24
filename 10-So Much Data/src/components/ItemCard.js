@@ -2,8 +2,8 @@ function ItemCard({ items }) {
   console.log(items);
   return (
     <div className="item">
-      {items.map((item, i) => (
-        <div key={i} className="item-3">
+      {items.map((item) => (
+        <div key={item.card.info.name} className="item-3">
           <div className="item-2">
             <span>{item.card.info.name} </span>
             <span>

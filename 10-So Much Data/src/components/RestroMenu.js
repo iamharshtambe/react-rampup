@@ -2,10 +2,11 @@ import Shimmer from './Shimmer.js';
 import { useParams } from 'react-router-dom';
 import { useRestaurantMenu } from '../hooks/useRestaurantMenu.js';
 import RestroCategory from './RestroCategory.js';
+import { useState } from 'react';
 
 function RestroMenu() {
+  const [showIndex, setShowIndex] = useState(0);
   const { restroId } = useParams();
-
   const restroMenu = useRestaurantMenu(restroId);
 
   if (!restroMenu) return <Shimmer />;
@@ -40,8 +41,13 @@ function RestroMenu() {
       <p>{sla.deliveryTime} mins</p>
 
       <h1>Our Menu</h1>
-      {categories.map((category, i) => (
-        <RestroCategory key={i} data={category.card.card} />
+      {categories.map((category, index) => (
+        <RestroCategory
+          key={category.card.card.title}
+          data={category.card.card}
+          accordian={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+        />
       ))}
     </div>
   );
