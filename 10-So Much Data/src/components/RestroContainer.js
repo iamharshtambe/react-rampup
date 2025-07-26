@@ -1,13 +1,15 @@
 import RestroCard, { withPromotedLabel } from './RestroCard.js';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Shimmer from './Shimmer.js';
 import { Link } from 'react-router-dom';
 import { useStatus } from '../hooks/useStatus.js';
+import UserContext from '../utils/UserContext.js';
 
 function RestroContainer() {
   const [listOfRestros, setListOfRestros] = useState([]);
   const [filteredListOfRestros, setFilteredListOfRestros] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const owner = useContext(UserContext);
 
   const PromotedRestroCard = withPromotedLabel(RestroCard);
 
@@ -83,6 +85,7 @@ function RestroContainer() {
           </Link>
         ))}
       </div>
+      <h1>{owner}</h1>
     </>
   );
 }

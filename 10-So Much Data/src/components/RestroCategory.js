@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ItemCard from './ItemCard';
 
 function RestroCategory({ data, accordian, setShowIndex }) {
