@@ -1,13 +1,13 @@
-import User from './User.js';
-
 function About() {
-   return (
-      <div className="">
-         <h1>About Us</h1>
+  return (
+    <div className="">
+      <h1>About Us</h1>
 
-         <User />
-      </div>
-   );
+      <input type="text" />
+
+      <input type="text" />
+    </div>
+  );
 }
 
 export default About;
