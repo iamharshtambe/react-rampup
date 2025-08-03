@@ -44,6 +44,10 @@ Performance optimization with custom hooks, Suspense component, and lazy loading
 
 Advanced patterns including Higher Order Components, controlled/uncontrolled components, and React DevTools.
 
+### 11 - Testing
+
+Unit testing using React Testing Library and Jest.
+
 ## Getting Started
 
 Each lesson folder contains its own project with specific setup instructions. Navigate to individual lesson directories to explore the code and run the projects.
